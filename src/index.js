@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-function TeamList(){
-    const [team,setTeam] = useState();
-};
+
 ReactDOM.render(
 <App />, 
 document.getElementById('root'));

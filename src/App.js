@@ -1,42 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import Form from "./Form";
+// import List from "./TeamList";
+import data from "./data";
+import TeamList from "./TeamList";
 
 function App() {
+  const [teammates,setTeammates] = useState(data);
+  const addNewMember = list => {
+    setTeammates([...teammates, list]);
+  }
 
-const [teammates,setTeammates] = useState([
-  {
-    name: "Charlie Kelly",
-    email: "CharlieK@gmail.com",
-    role: "Janitor"
-  }
-  ,
-  {
-    name: "Dennis Reynolds",
-    email: "DennisR@gmail.com",
-    role: "Co-Owner of Paddy's Pub"
-  }
-  ,
-  {
-    name: "Dee Reynolds",
-    email: "DeeR@gmail.com",
-    role: "Salesman"
-  }
-  ,
-  {
-    name: "Mac McDonald",
-    email: "Mac@gmail.com",
-    role: "Co-Owner/Bouncer of Paddy's Pub"
-  }
-  ,
-  {
-    name: "Frank Reynolds",
-    email: "FrankR@gmail.com",
-    role: "Co-Owner of Paddy's Pub"
-  }
-]);
 
   return (
     <div className="App">
@@ -54,9 +30,11 @@ const [teammates,setTeammates] = useState([
           Learn React
         </a>
       </header> */}
-      
+      <h1>Team Member </h1>
+      <Form addNewMember={addNewMember}/>
+      <TeamList addNewMember={teammates}/>
     </div>
   );
-}
+};
 
 export default App;
